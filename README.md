@@ -1,15 +1,7 @@
-# Elysia with Bun runtime
+very simple ai
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+even works inside of mosaic browser from 1993 (yes i tested)
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
+![Mosaic preview](assets/mosaic-preview.png)
 
-Open http://localhost:3000/ with your browser to see the result.
+made with bun and elysia

@@ -1,15 +1,17 @@
 {
-  "name": "app-",
-  "version": "1.0.50",
+  "name": "static-ai",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.tsx"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@ai-sdk/google": "^1.2.19",
+    "@elysiajs/html": "^1.3.0",
+    "ai": "^4.3.16",
+    "elysia": "latest",
+    "isomorphic-dompurify": "^2.25.0",
+    "marked": "^15.0.12"
   },
   "devDependencies": {
     "bun-types": "latest"
-  },
-  "module": "src/index.js"
+  }
 }
