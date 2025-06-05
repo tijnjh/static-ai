@@ -1,10 +1,9 @@
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { generateText } from "ai";
-import { marked } from "marked";
 import DOMPurify from "isomorphic-dompurify";
-
-import { Elysia } from "elysia";
+import { marked } from "marked";
 import { Html, html } from "@elysiajs/html";
+import { Elysia } from "elysia";
 
 const google = createGoogleGenerativeAI({
   apiKey: process.env.API_KEY,
