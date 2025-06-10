@@ -30,7 +30,7 @@ const server = Bun.serve({
         </form>
       </html>
     ),
-    "/response": async (req: Bun.BunRequest) => {
+    "/response": async (req) => {
       const prompt = new URL(req.url).searchParams.get("prompt");
 
       if (!prompt) {
