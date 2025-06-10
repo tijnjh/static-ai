@@ -29,7 +29,7 @@ function Head(
 
 const server = Bun.serve({
   port: 3000,
-  idleTimeout: 0,
+  idleTimeout: 60,
   routes: {
     "/": () => (
       <html>
