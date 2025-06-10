@@ -7,18 +7,28 @@ const google = createGoogleGenerativeAI({
   apiKey: process.env.API_KEY,
 });
 
+function Head(
+  { title, description }: { title?: string; description?: string },
+) {
+  return (
+    <head>
+      <meta charSet="UTF-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+      />
+      {!!title && <title>{title}</title>}
+      {!!description && <meta name="description" content={description} />}
+    </head>
+  );
+}
+
 const server = Bun.serve({
   port: 3000,
   routes: {
     "/": () => (
       <html>
-        <head>
-          <meta charSet="UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-        </head>
+        <Head />
         <form action="/response">
           <input
             type="text"
@@ -47,15 +57,7 @@ const server = Bun.serve({
 
       return (
         <html>
-          <head>
-            <meta charSet="UTF-8" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0"
-            />
-            <meta name="description" content={text} />
-            <title>{prompt}</title>
-          </head>
+          <Head title={prompt} description={text} />
           {html(cleanHtml)}
         </html>
       );
