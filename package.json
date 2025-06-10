@@ -1,6 +1,6 @@
 {
   "name": "static-ai",
-  "module": "src/index.js",
+  "module": "src/index.tsx",
   "scripts": {
     "dev": "bun run --watch src/index.tsx"
   },
