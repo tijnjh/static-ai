@@ -17,6 +17,10 @@ function Head(
         name="viewport"
         content="width=device-width, initial-scale=1.0"
       />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+      />
       {!!title && <title>{title}</title>}
       {!!description && <meta name="description" content={description} />}
     </head>
@@ -25,6 +29,7 @@ function Head(
 
 const server = Bun.serve({
   port: 3000,
+  idleTimeout: 0,
   routes: {
     "/": () => (
       <html>
@@ -58,7 +63,9 @@ const server = Bun.serve({
       return (
         <html>
           <Head title={prompt} description={text} />
-          {html(cleanHtml)}
+          <div class="prose">
+            {html(cleanHtml)}
+          </div>
         </html>
       );
     },
