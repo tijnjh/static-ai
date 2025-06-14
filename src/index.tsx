@@ -1,5 +1,6 @@
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { generateText } from "ai";
+import { serve } from "bun";
 import DOMPurify from "isomorphic-dompurify";
 import { marked } from "marked";
 
@@ -27,7 +28,7 @@ function Head(
   );
 }
 
-const server = Bun.serve({
+const server = serve({
   port: 3000,
   idleTimeout: 60,
   routes: {
@@ -69,9 +70,6 @@ const server = Bun.serve({
         </html>
       );
     },
-  },
-  async fetch(req) {
-    return new Response("Not Found", { status: 404 });
   },
 });
 
