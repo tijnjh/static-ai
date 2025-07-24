@@ -2,7 +2,8 @@
   "name": "static-ai",
   "module": "src/index.tsx",
   "scripts": {
-    "dev": "bun run --watch src/index.tsx"
+    "dev": "bun run --watch src/index.tsx",
+    "start": "bun ."
   },
   "dependencies": {
     "@ai-sdk/google": "^1.2.19",
